@@ -16,18 +16,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = deaActiveColor;
-  Color feMaleColor = deaActiveColor;
-  void updateColor(Gender gendertype) {
-    if (gendertype == Gender.male) {
-      maleColor = activeColor;
-      feMaleColor = deaActiveColor;
-    }
-    if (gendertype == Gender.female) {
-      feMaleColor = activeColor;
-      maleColor = deaActiveColor;
-    }
-  }
+  Gender selectGender;
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +33,13 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColor(Gender.male);
+                          selectGender = Gender.male;
                         });
                       },
                       child: RepeatContainercode(
-                        colors: maleColor,
+                        colors: selectGender == Gender.male
+                            ? activeColor
+                            : deaActiveColor,
                         cardWidget: RepeatTextandIconWidget(
                           iconData: FontAwesomeIcons.male,
                           label: 'MALE',
@@ -60,11 +51,13 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColor(Gender.female);
+                          selectGender = Gender.male;
                         });
                       },
                       child: RepeatContainercode(
-                        colors: feMaleColor,
+                        colors: selectGender == Gender.female
+                            ? activeColor
+                            : deaActiveColor,
                         cardWidget: RepeatTextandIconWidget(
                           iconData: FontAwesomeIcons.female,
                           label: 'FEMALE',
