@@ -4,6 +4,14 @@ import 'package:new_bmi_calculator/ContainerFile.dart';
 import 'input_page.dart';
 
 class ResultScreen extends StatelessWidget {
+  ResultScreen({
+    @required this.bmiResult,
+    @required this.interpretation,
+    @required this.resultText,
+  });
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +41,15 @@ class ResultScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Normal',
+                      resultText,
                       style: kResultText,
                     ),
                     Text(
-                      '18.3',
+                      bmiResult,
                       style: kBmiTextStyle,
                     ),
                     Text(
-                      'BMI is low You should have to work more',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: kbodyTextStyle,
                     ),
