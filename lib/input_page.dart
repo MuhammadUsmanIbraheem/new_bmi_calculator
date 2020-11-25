@@ -30,38 +30,34 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: RepeatContainercode(
+                      onPressed: () {
                         setState(() {
                           selectGender = Gender.male;
                         });
                       },
-                      child: RepeatContainercode(
-                        colors: selectGender == Gender.male
-                            ? activeColor
-                            : deaActiveColor,
-                        cardWidget: RepeatTextandIconWidget(
-                          iconData: FontAwesomeIcons.male,
-                          label: 'MALE',
-                        ),
+                      colors: selectGender == Gender.male
+                          ? activeColor
+                          : deaActiveColor,
+                      cardWidget: RepeatTextandIconWidget(
+                        iconData: FontAwesomeIcons.male,
+                        label: 'MALE',
                       ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: RepeatContainercode(
+                      onPressed: () {
                         setState(() {
-                          selectGender = Gender.male;
+                          selectGender = Gender.female;
                         });
                       },
-                      child: RepeatContainercode(
-                        colors: selectGender == Gender.female
-                            ? activeColor
-                            : deaActiveColor,
-                        cardWidget: RepeatTextandIconWidget(
-                          iconData: FontAwesomeIcons.female,
-                          label: 'FEMALE',
-                        ),
+                      colors: selectGender == Gender.female
+                          ? activeColor
+                          : deaActiveColor,
+                      cardWidget: RepeatTextandIconWidget(
+                        iconData: FontAwesomeIcons.female,
+                        label: 'FEMALE',
                       ),
                     ),
                   ),
