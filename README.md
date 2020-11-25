@@ -20,3 +20,5 @@ samples, guidance on mobile development, and a full API reference.
 ![59(click gesture)](https://user-images.githubusercontent.com/73757387/100291494-c668e200-2f9f-11eb-898f-ef7d81b102a3.PNG)
 ![60(use of gesture detector)](https://user-images.githubusercontent.com/73757387/100291511-ce288680-2f9f-11eb-8378-3c95f491cc5f.PNG)
 ![67(custom creation of floating action button)](https://user-images.githubusercontent.com/73757387/100291635-26f81f00-2fa0-11eb-8c2f-c0b271c59da4.PNG)
+![2nd screen calculation](https://user-images.githubusercontent.com/73757387/100291960-fbc1ff80-2fa0-11eb-9d15-6f9602376f6c.PNG)
+![final calculation](https://user-images.githubusercontent.com/73757387/100292100-63784a80-2fa1-11eb-9e43-c27305917a75.PNG)
