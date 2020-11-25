@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -20,11 +21,19 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: RepeatContainercode(
                       colors: Color(0xFF1D1E33),
+                      cardWidget: RepeatTextandIconWidget(
+                        iconData: FontAwesomeIcons.male,
+                        label: 'MALE',
+                      ),
                     ),
                   ),
                   Expanded(
                     child: RepeatContainercode(
                       colors: Color(0xFF1D1E33),
+                      cardWidget: RepeatTextandIconWidget(
+                        iconData: FontAwesomeIcons.female,
+                        label: 'FEMALE',
+                      ),
                     ),
                   ),
                 ],
@@ -56,13 +65,43 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
+class RepeatTextandIconWidget extends StatelessWidget {
+  RepeatTextandIconWidget({@required this.iconData, this.label});
+  final IconData iconData;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          iconData,
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xFF8D8E98),
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class RepeatContainercode extends StatelessWidget {
-  RepeatContainercode({@required this.colors});
+  RepeatContainercode({@required this.colors, this.cardWidget});
   final Color colors;
+  final Widget cardWidget;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15.0),
+      child: cardWidget,
       decoration: BoxDecoration(
           color: colors, borderRadius: BorderRadius.circular(10.0)),
     );
